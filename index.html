@@ -1,0 +1,1770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UM Service and Supply Ltd | Professional Home Maintenance</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --amber-50: #fffbeb;
+      --amber-100: #fef3c7;
+      --amber-200: #fde68a;
+      --amber-300: #fcd34d;
+      --amber-400: #fbbf24;
+      --amber-500: #f59e0b;
+      --amber-600: #d97706;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-300: #d1d5db;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-800: #1f2937;
+      --gray-900: #111827;
+      --gray-950: #030712;
+      --white: #ffffff;
+      --blue-50: #eff6ff;
+      --blue-600: #2563eb;
+      --cyan-50: #ecf8ff;
+      --cyan-600: #0891b2;
+      --rose-50: #fff1f2;
+      --rose-600: #e11d48;
+      --green-50: #f0fdf4;
+      --green-600: #16a34a;
+      --teal-50: #f0fdfa;
+      --teal-600: #0d9488;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    body {
+      line-height: 1.5;
+      color: var(--gray-900);
+      background: var(--white);
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      transition: all 0.3s ease;
+      padding: 1.25rem 0;
+      background: var(--white);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar.scrolled {
+      padding: 0.75rem 0;
+    }
+
+    .navbar-content {
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+    }
+
+    .navbar-logo {
+      background: var(--amber-500);
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      color: var(--white);
+      font-size: 1.25rem;
+    }
+
+    .navbar-text span:first-child {
+      font-weight: 700;
+      font-size: 1.125rem;
+      line-height: 1;
+      display: block;
+      color: var(--gray-900);
+    }
+
+    .navbar-text span:last-child {
+      font-size: 0.75rem;
+      line-height: 1;
+      color: var(--amber-500);
+    }
+
+    .navbar-nav {
+      display: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .navbar-nav {
+        display: flex;
+      }
+    }
+
+    .navbar-nav button {
+      background: none;
+      border: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: color 0.2s;
+      color: var(--gray-700);
+    }
+
+    .navbar-nav button:hover {
+      color: var(--amber-500);
+    }
+
+    .navbar-cta {
+      background: var(--amber-500);
+      color: var(--white);
+      border: none;
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 0.625rem 1.25rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .navbar-cta:hover {
+      background: var(--amber-600);
+    }
+
+    .menu-toggle {
+      display: flex;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--gray-900);
+    }
+
+    @media (min-width: 768px) {
+      .menu-toggle {
+        display: none;
+      }
+    }
+
+    .mobile-menu {
+      display: none;
+      background: var(--white);
+      border-top: 1px solid var(--gray-100);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-menu.open {
+      display: block;
+    }
+
+    .mobile-menu-content {
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .mobile-menu-item {
+      padding: 0.75rem 0;
+      color: var(--gray-700);
+      font-weight: 500;
+      background: none;
+      border: none;
+      border-bottom: 1px solid var(--gray-50);
+      cursor: pointer;
+      text-align: left;
+      transition: color 0.2s;
+    }
+
+    .mobile-menu-item:hover {
+      color: var(--amber-500);
+    }
+
+    .mobile-menu-item:last-of-type {
+      border-bottom: none;
+    }
+
+    .mobile-cta {
+      margin-top: 0.75rem;
+      background: var(--amber-500);
+      color: var(--white);
+      font-weight: 600;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .mobile-cta:hover {
+      background: var(--amber-600);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      margin-top: 3rem;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(17, 24, 39, 0.9), rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.3));
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 0 1.5rem 5rem;
+      max-width: 32rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(245, 158, 11, 0.2);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: var(--amber-300);
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title .highlight {
+      color: var(--amber-400);
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+    }
+
+    .hero-description {
+      font-size: 1.125rem;
+      color: var(--gray-300);
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+      max-width: 28rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 3.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .hero-buttons {
+        flex-direction: row;
+      }
+    }
+
+    .btn {
+      border: none;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .btn-primary {
+      background: var(--amber-500);
+      color: var(--white);
+      padding: 1rem 2rem;
+      font-size: 1.125rem;
+      box-shadow: 0 20px 25px rgba(245, 158, 11, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: var(--amber-600);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      padding: 1rem 2rem;
+      font-size: 1.125rem;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .hero-stats {
+        flex-direction: row;
+        gap: 1.5rem;
+      }
+    }
+
+    .hero-stat {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .hero-stat-icon {
+      background: rgba(245, 158, 11, 0.2);
+      padding: 0.625rem;
+      border-radius: 0.5rem;
+      color: var(--amber-400);
+    }
+
+    .hero-stat-text p:first-child {
+      color: var(--white);
+      font-weight: 600;
+      font-size: 0.875rem;
+    }
+
+    .hero-stat-text p:last-child {
+      color: var(--gray-400);
+      font-size: 0.75rem;
+    }
+
+    /* Services Section */
+    .section {
+      padding: 6rem 0;
+    }
+
+    .section-container {
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-label {
+      color: var(--amber-500);
+      font-weight: 600;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 1.25rem;
+    }
+
+    @media (min-width: 768px) {
+      .section-title {
+        font-size: 3rem;
+      }
+    }
+
+    .section-description {
+      color: var(--gray-500);
+      font-size: 1.125rem;
+      max-width: 42rem;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    #services {
+      background: var(--gray-50);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      border: 1px solid var(--gray-100);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .service-card:hover {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      transform: translateY(-4px);
+    }
+
+    .service-icon {
+      display: inline-flex;
+      padding: 0.75rem;
+      border-radius: 0.75rem;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover .service-icon {
+      transform: scale(1.1);
+    }
+
+    .service-title {
+      font-weight: 700;
+      font-size: 1.125rem;
+      color: var(--gray-900);
+      margin-bottom: 0.5rem;
+    }
+
+    .service-description {
+      color: var(--gray-500);
+      font-size: 0.875rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .service-cta {
+      color: var(--amber-500);
+      font-size: 0.875rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      transition: gap 0.2s;
+    }
+
+    .service-card:hover .service-cta {
+      gap: 0.5rem;
+    }
+
+    .see-more-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 2px solid var(--amber-500);
+      color: var(--amber-600);
+      background: none;
+      font-weight: 600;
+      padding: 0.875rem 2rem;
+      border-radius: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 2.5rem;
+    }
+
+    .see-more-btn:hover {
+      background: var(--amber-500);
+      color: var(--white);
+    }
+
+    /* Why Us Section */
+    #why-us {
+      background: var(--white);
+    }
+
+    .why-us-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .why-us-content {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .why-us-left h2 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 1.5rem;
+      line-height: 1.3;
+    }
+
+    .why-us-left p {
+      color: var(--gray-500);
+      font-size: 1.125rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .why-us-stats {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .why-us-stat {
+      text-align: center;
+    }
+
+    .why-us-stat-value {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--gray-900);
+    }
+
+    .why-us-stat-label {
+      color: var(--gray-500);
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+    }
+
+    .why-us-stat-divider {
+      width: 1px;
+      height: 3rem;
+      background: var(--gray-200);
+    }
+
+    .why-us-reasons {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .why-us-reasons {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .reason-item {
+      display: flex;
+      gap: 1rem;
+      padding: 1.25rem;
+      border-radius: 1rem;
+      border: 1px solid var(--gray-100);
+      transition: all 0.3s;
+    }
+
+    .reason-item:hover {
+      border-color: var(--amber-200);
+      background: rgba(255, 251, 235, 0.5);
+    }
+
+    .reason-icon {
+      flex-shrink: 0;
+      background: var(--amber-100);
+      color: var(--amber-600);
+      padding: 0.75rem;
+      border-radius: 0.75rem;
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+    }
+
+    .reason-item:hover .reason-icon {
+      background: var(--amber-200);
+    }
+
+    .reason-content h3 {
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 0.25rem;
+    }
+
+    .reason-content p {
+      color: var(--gray-500);
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+
+    /* How It Works */
+    #how-it-works {
+      background: var(--gray-900);
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .steps-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .step-item {
+      position: relative;
+    }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .step-icon {
+      background: var(--amber-500);
+      color: var(--white);
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      box-shadow: 0 10px 25px rgba(245, 158, 11, 0.2);
+    }
+
+    .step-number {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--gray-800);
+      line-height: 1;
+    }
+
+    .step-title {
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .step-description {
+      color: var(--gray-400);
+      line-height: 1.6;
+      font-size: 0.875rem;
+    }
+
+    .steps-cta {
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    .btn-dark {
+      background: var(--amber-500);
+      color: var(--white);
+      font-weight: 700;
+      padding: 1rem 2.5rem;
+      font-size: 1.125rem;
+      box-shadow: 0 20px 25px rgba(245, 158, 11, 0.25);
+    }
+
+    .btn-dark:hover {
+      background: var(--amber-400);
+    }
+
+    /* Testimonials */
+    #testimonials {
+      background: var(--gray-50);
+    }
+
+    .section-header .rating-display {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .star {
+      color: var(--amber-400);
+      font-size: 1.5rem;
+    }
+
+    .rating-value {
+      color: var(--gray-700);
+      font-weight: 700;
+      font-size: 1.125rem;
+      margin-left: 0.5rem;
+    }
+
+    .rating-label {
+      color: var(--gray-500);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      border-radius: 1.5rem;
+      padding: 1.75rem;
+      border: 1px solid var(--gray-100);
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .testimonial-card:hover {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .quote-icon {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      color: var(--gray-100);
+      font-size: 2rem;
+    }
+
+    .testimonial-rating {
+      display: flex;
+      gap: 0.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-text {
+      color: var(--gray-600);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      font-size: 0.875rem;
+    }
+
+    .testimonial-footer {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--gray-50);
+    }
+
+    .testimonial-avatar {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.875rem;
+      flex-shrink: 0;
+    }
+
+    .testimonial-info h4 {
+      font-weight: 700;
+      color: var(--gray-900);
+      font-size: 0.875rem;
+    }
+
+    .testimonial-info p {
+      color: var(--gray-400);
+      font-size: 0.75rem;
+    }
+
+    /* Contact Form */
+    #contact {
+      background: var(--white);
+    }
+
+    .contact-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4rem;
+      align-items: flex-start;
+    }
+
+    @media (min-width: 1024px) {
+      .contact-content {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .contact-info-icon {
+      background: var(--amber-50);
+      padding: 0.75rem;
+      border-radius: 0.75rem;
+      color: var(--amber-600);
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-info-text h4 {
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-info-text p {
+      color: var(--gray-500);
+      font-size: 0.875rem;
+    }
+
+    .contact-info-text .sub {
+      color: var(--gray-400);
+      font-size: 0.75rem;
+      margin-top: 0.25rem;
+    }
+
+    .contact-form {
+      background: var(--gray-50);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      border: 1px solid var(--gray-100);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+      .form-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+    }
+
+    .form-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--gray-700);
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--gray-200);
+      border-radius: 0.75rem;
+      font-family: inherit;
+      font-size: 1rem;
+      color: var(--gray-900);
+      background: var(--white);
+      transition: all 0.2s;
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: var(--gray-400);
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      outline: none;
+      ring: 2px;
+      border-color: transparent;
+      box-shadow: 0 0 0 3px var(--amber-100), 0 0 0 5px var(--amber-400);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 6rem;
+    }
+
+    .form-full {
+      grid-column: 1 / -1;
+    }
+
+    .form-submit {
+      grid-column: 1 / -1;
+      margin-top: 0.5rem;
+    }
+
+    .form-error {
+      color: var(--rose-600);
+      font-size: 0.875rem;
+      background: var(--rose-50);
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      border: 1px solid var(--rose-100);
+      grid-column: 1 / -1;
+      display: none;
+    }
+
+    .form-error.show {
+      display: block;
+    }
+
+    .form-disclaimer {
+      text-align: center;
+      color: var(--gray-400);
+      font-size: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .success-message {
+      display: none;
+      text-align: center;
+      padding: 3rem 0;
+    }
+
+    .success-message.show {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .success-icon {
+      background: var(--green-50);
+      padding: 1rem;
+      border-radius: 9999px;
+      color: var(--green-600);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .success-message h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 0.75rem;
+    }
+
+    .success-message p {
+      color: var(--gray-500);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .success-reset {
+      color: var(--amber-600);
+      font-weight: 600;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-decoration: underline;
+      text-decoration-offset: 2px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--gray-950);
+      color: var(--white);
+    }
+
+    .footer-content {
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .footer-content {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-logo {
+      background: var(--amber-500);
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      color: var(--white);
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-brand-text span:first-child {
+      font-weight: 700;
+      font-size: 1.125rem;
+      line-height: 1;
+      display: block;
+    }
+
+    .footer-brand-text span:last-child {
+      color: var(--amber-400);
+      font-size: 0.75rem;
+      line-height: 1;
+    }
+
+    .footer-description {
+      color: var(--gray-400);
+      font-size: 0.875rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .footer-social {
+      background: var(--gray-800);
+      color: var(--gray-300);
+      width: 2.625rem;
+      height: 2.625rem;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+      font-size: 1rem;
+    }
+
+    .footer-social:hover {
+      background: var(--amber-500);
+      color: var(--white);
+    }
+
+    .footer-section h4 {
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-link {
+      color: var(--gray-400);
+      font-size: 0.875rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: color 0.2s;
+      text-align: left;
+    }
+
+    .footer-link:hover {
+      color: var(--amber-400);
+    }
+
+    .footer-services {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--gray-800);
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .footer-bottom {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+      }
+    }
+
+    .footer-bottom-content {
+      max-width: 80rem;
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    @media (min-width: 640px) {
+      .footer-bottom-content {
+        flex-direction: row;
+      }
+    }
+
+    .footer-copyright {
+      color: var(--gray-500);
+      font-size: 0.875rem;
+    }
+
+    .footer-policies {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-policy {
+      color: var(--gray-500);
+      font-size: 0.875rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .footer-policy:hover {
+      color: var(--gray-300);
+    }
+
+    /* Utility Classes */
+    .hidden {
+      display: none !important;
+    }
+
+    .color-blue-50 { background: var(--blue-50); }
+    .color-blue-600 { color: var(--blue-600); }
+    .color-cyan-50 { background: var(--cyan-50); }
+    .color-cyan-600 { color: var(--cyan-600); }
+    .color-rose-50 { background: var(--rose-50); }
+    .color-rose-600 { color: var(--rose-600); }
+    .color-amber-50 { background: var(--amber-50); }
+    .color-amber-600 { color: var(--amber-600); }
+    .color-green-50 { background: var(--green-50); }
+    .color-green-600 { color: var(--green-600); }
+    .color-teal-50 { background: var(--teal-50); }
+    .color-teal-600 { color: var(--teal-600); }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-content">
+      <div class="navbar-brand">
+        <div class="navbar-logo"><i class="fas fa-wrench"></i></div>
+        <div class="navbar-text">
+          <span>UM</span>
+          <span>Service & Supply Ltd</span>
+        </div>
+      </div>
+      <nav class="navbar-nav">
+        <button onclick="scrollToSection('services')">Services</button>
+        <button onclick="scrollToSection('why-us')">Why Us</button>
+        <button onclick="scrollToSection('how-it-works')">How It Works</button>
+        <button onclick="scrollToSection('testimonials')">Testimonials</button>
+        <button onclick="scrollToSection('contact')">Contact</button>
+        <button class="navbar-cta" onclick="scrollToSection('contact')">Get a Quote</button>
+      </nav>
+      <button class="menu-toggle" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-content">
+        <button class="mobile-menu-item" onclick="scrollToSection('services')">Services</button>
+        <button class="mobile-menu-item" onclick="scrollToSection('why-us')">Why Us</button>
+        <button class="mobile-menu-item" onclick="scrollToSection('how-it-works')">How It Works</button>
+        <button class="mobile-menu-item" onclick="scrollToSection('testimonials')">Testimonials</button>
+        <button class="mobile-menu-item" onclick="scrollToSection('contact')">Contact</button>
+        <button class="mobile-cta" onclick="scrollToSection('contact')">Get a Quote</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="https://images.pexels.com/photos/1669754/pexels-photo-1669754.jpeg" alt="Home maintenance">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+      </div>
+      <h1 class="hero-title">Your Home, <span class="highlight">Perfectly</span> Maintained</h1>
+      <p class="hero-description">Professional home maintenance and repair services you can trust. From plumbing to roofing, our skilled tradespeople handle it all.</p>
+      <div class="hero-buttons">
+        <button class="btn btn-primary" onclick="scrollToSection('contact')">
+          <i class="fas fa-arrow-right"></i> Get a Free Quote
+        </button>
+        <button class="btn btn-secondary" onclick="scrollToSection('services')">View Services</button>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-icon"><i class="fas fa-shield-alt"></i></div>
+          <div class="hero-stat-text">
+            <p>Fully Insured</p>
+            <p>All work guaranteed</p>
+          </div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-icon"><i class="fas fa-clock"></i></div>
+          <div class="hero-stat-text">
+            <p>Same-Day Service</p>
+            <p>Available 7 days a week</p>
+          </div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-icon"><i class="fas fa-star"></i></div>
+          <div class="hero-stat-text">
+            <p>4.9/5 Rating</p>
+            <p>500+ verified reviews</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="section" id="services">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-label">What We Offer</span>
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-description">From routine maintenance to major repairs, our skilled team handles every aspect of your home with expertise and care.</p>
+      </div>
+      <div class="services-grid" id="servicesGrid"></div>
+      <div style="text-align: center;">
+        <button class="see-more-btn" onclick="toggleServices()" id="seeMoreBtn">
+          See More Services <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us Section -->
+  <section class="section" id="why-us">
+    <div class="section-container">
+      <div class="why-us-content">
+        <div class="why-us-left">
+          <span class="section-label">Why Choose Us</span>
+          <h2>The Standard You Deserve</h2>
+          <p>At UM Service and Supply Ltd, we hold ourselves to the highest standard. Our mission is simple: deliver exceptional workmanship and outstanding service, every single time.</p>
+          <div class="why-us-stats">
+            <div class="why-us-stat">
+              <div class="why-us-stat-value">12+</div>
+              <div class="why-us-stat-label">Years Experience</div>
+            </div>
+            <div class="why-us-stat-divider"></div>
+            <div class="why-us-stat">
+              <div class="why-us-stat-value">2k+</div>
+              <div class="why-us-stat-label">Happy Customers</div>
+            </div>
+            <div class="why-us-stat-divider"></div>
+            <div class="why-us-stat">
+              <div class="why-us-stat-value">99%</div>
+              <div class="why-us-stat-label">Satisfaction Rate</div>
+            </div>
+          </div>
+        </div>
+        <div class="why-us-reasons" id="reasonsGrid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="section" id="how-it-works">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-label" style="color: var(--amber-400);">Simple Process</span>
+        <h2 class="section-title" style="color: var(--white);">How It Works</h2>
+        <p class="section-description" style="color: var(--gray-400);">Getting your home sorted has never been easier. Four simple steps from request to completion.</p>
+      </div>
+      <div class="steps-grid" id="stepsGrid"></div>
+      <div class="steps-cta">
+        <button class="btn btn-dark" onclick="scrollToSection('contact')">Get Started Today</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section" id="testimonials">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-label">Customer Reviews</span>
+        <h2 class="section-title">What Our Clients Say</h2>
+        <p class="section-description">Don't just take our word for it. Here's what homeowners across the UK say about working with us.</p>
+        <div class="rating-display">
+          <i class="fas fa-star star"></i>
+          <i class="fas fa-star star"></i>
+          <i class="fas fa-star star"></i>
+          <i class="fas fa-star star"></i>
+          <i class="fas fa-star star"></i>
+          <span class="rating-value">4.9</span>
+          <span class="rating-label">/ 5 from 500+ reviews</span>
+        </div>
+      </div>
+      <div class="testimonials-grid" id="testimonialsGrid"></div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section" id="contact">
+    <div class="section-container">
+      <div class="contact-content">
+        <div>
+          <span class="section-label">Get In Touch</span>
+          <h2 class="section-title">Request a Free Quote</h2>
+          <p class="section-description">Tell us about your project and we'll get back to you with a competitive, no-obligation quote within 24 hours.</p>
+          <div style="margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem;">
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><i class="fas fa-phone"></i></div>
+              <div class="contact-info-text">
+                <h4>Phone</h4>
+                <p>02080587419</p>
+                <p class="sub">Mon–Sat, 8am–6pm</p>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+              <div class="contact-info-text">
+                <h4>Email</h4>
+                <p>maintenance@umserviceandsupply.com</p>
+                <p class="sub">We reply within 24 hours</p>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="contact-info-text">
+                <h4>Coverage</h4>
+                <p>Nationwide coverage across the UK</p>
+                <p class="sub">Same-day service available</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <div class="success-message" id="successMessage">
+            <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+            <h3>Enquiry Sent!</h3>
+            <p>Thank you for getting in touch. One of our team will be back to you within 24 hours with a quote.</p>
+            <button class="success-reset" onclick="resetForm()">Send another enquiry</button>
+          </div>
+
+          <form class="form-row" id="contactForm" style="display: grid; grid-template-columns: 1fr; gap: 1.25rem;">
+            <div style="display: grid; grid-template-columns: 1fr; gap: 1.25rem;" class="form-row-cols">
+              <div class="form-group">
+                <label class="form-label">Full Name *</label>
+                <input type="text" name="name" class="form-input" placeholder="John Smith" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email Address *</label>
+                <input type="email" name="email" class="form-input" placeholder="john@email.com" required>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr; gap: 1.25rem;" class="form-row-cols">
+              <div class="form-group">
+                <label class="form-label">Phone Number</label>
+                <input type="tel" name="phone" class="form-input" placeholder="07700 000000">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Service Required *</label>
+                <select name="service" class="form-select" required>
+                  <option value="">Select a service</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group form-full">
+              <label class="form-label">Tell Us About Your Job *</label>
+              <textarea name="message" class="form-textarea" placeholder="Please describe the work you need done, including any relevant details..." required></textarea>
+            </div>
+
+            <div class="form-error" id="formError"></div>
+            <button type="submit" class="btn btn-primary form-submit" style="margin-top: 0.5rem; width: 100%;">
+              <i class="fas fa-paper-plane"></i> Send Enquiry
+            </button>
+            <p class="form-disclaimer">By submitting this form you agree to our privacy policy. We will never share your details.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">
+          <div class="footer-logo"><i class="fas fa-wrench"></i></div>
+          <div class="footer-brand-text">
+            <span>UM Service</span>
+            <span>& Supply Ltd</span>
+          </div>
+        </div>
+        <p class="footer-description">Professional home maintenance and repair services you can trust. Serving homeowners across the UK for over 12 years.</p>
+        <div class="footer-socials">
+          <button class="footer-social"><i class="fab fa-facebook"></i></button>
+          <button class="footer-social"><i class="fab fa-twitter"></i></button>
+          <button class="footer-social"><i class="fab fa-instagram"></i></button>
+          <button class="footer-social"><i class="fab fa-linkedin"></i></button>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <button class="footer-link" onclick="scrollToSection('services')">Services</button>
+          <button class="footer-link" onclick="scrollToSection('why-us')">Why Choose Us</button>
+          <button class="footer-link" onclick="scrollToSection('how-it-works')">How It Works</button>
+          <button class="footer-link" onclick="scrollToSection('testimonials')">Testimonials</button>
+          <button class="footer-link" onclick="scrollToSection('contact')">Get a Quote</button>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Our Services</h4>
+        <div class="footer-services" id="footerServices"></div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <div class="footer-links">
+          <div style="color: var(--gray-400); font-size: 0.875rem; margin-bottom: 1rem;">
+            <p><i class="fas fa-phone" style="color: var(--amber-500); margin-right: 0.5rem;"></i>02080587419</p>
+            <p style="font-size: 0.75rem; color: var(--gray-500); margin-top: 0.25rem;">Mon–Sat, 8am–6pm</p>
+          </div>
+          <div style="color: var(--gray-400); font-size: 0.875rem; margin-bottom: 1rem;">
+            <p><i class="fas fa-envelope" style="color: var(--amber-500); margin-right: 0.5rem;"></i>maintenance@umserviceandsupply.com</p>
+          </div>
+          <div style="color: var(--gray-400); font-size: 0.875rem;">
+            <p><i class="fas fa-map-marker-alt" style="color: var(--amber-500); margin-right: 0.5rem;"></i>Nationwide coverage across the UK</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p class="footer-copyright">&copy; 2025 UM Service and Supply Ltd. All rights reserved.</p>
+        <div class="footer-policies">
+          <button class="footer-policy">Privacy Policy</button>
+          <button class="footer-policy">Terms of Service</button>
+          <button class="footer-policy">Cookie Policy</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const SUPABASE_URL = 'https://fklphvpnhvktbiurjffd.supabase.co';
+    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZrbHBodnBuaHZrdGJpdXJqZmZkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg1MTgzNjIsImV4cCI6MjA5NDA5NDM2Mn0._yoQZw0tmbmPzBtJbb_8NBvd68WUqgcJT0TPJ-7NGTc';
+
+    const services = [
+      { icon: 'fa-wrench', title: 'Handyman', description: 'General repairs and maintenance for your home, from fixing doors to assembling furniture.', color: 'blue-50', textColor: 'blue-600' },
+      { icon: 'fa-droplet', title: 'Plumbing', description: 'Expert plumbing services for all your needs — leaks, installations, and full overhauls.', color: 'cyan-50', textColor: 'cyan-600' },
+      { icon: 'fa-hammer', title: 'Carpentry', description: 'Custom carpentry and woodwork solutions, from fitted wardrobes to bespoke furniture.', color: 'amber-50', textColor: 'amber-600' },
+      { icon: 'fa-paint-brush', title: 'Decorating', description: 'Interior and exterior painting services with premium finishes and expert colour advice.', color: 'rose-50', textColor: 'rose-600' },
+      { icon: 'fa-key', title: 'Locksmith', description: 'Professional locksmith and security services — lockouts, lock changes, and upgrades.', color: 'gray-50', textColor: 'gray-600' },
+      { icon: 'fa-sparkles', title: 'Cleaning', description: 'Deep cleaning and regular maintenance services to keep your home spotless year-round.', color: 'teal-50', textColor: 'teal-600' },
+      { icon: 'fa-layer-group', title: 'Flooring', description: 'Floor installation and repair services — tiles, laminate, hardwood, and vinyl.', color: 'orange-50', textColor: 'orange-600' },
+      { icon: 'fa-house', title: 'Roofing', description: 'Roof repair, replacement, and maintenance to protect your home from the elements.', color: 'slate-50', textColor: 'slate-600' },
+      { icon: 'fa-tree', title: 'Plastering', description: 'Professional plastering and wall finishing for smooth, flawless surfaces.', color: 'yellow-50', textColor: 'yellow-600' },
+      { icon: 'fa-leaf', title: 'Gardening', description: 'Garden design and maintenance services to keep your outdoor spaces beautiful.', color: 'green-50', textColor: 'green-600' },
+      { icon: 'fa-trash', title: 'Gutter Cleaning', description: 'Professional gutter cleaning and maintenance to prevent blockages and water damage.', color: 'indigo-50', textColor: 'indigo-600' },
+      { icon: 'fa-truck', title: 'Removals', description: 'Professional moving and removal services — local and long-distance, handled with care.', color: 'purple-50', textColor: 'purple-600' },
+    ];
+
+    const reasons = [
+      { icon: 'fa-shield', title: 'Fully Insured', description: 'All our tradespeople are fully insured and vetted, giving you complete peace of mind.' },
+      { icon: 'fa-badge-check', title: 'Certified Professionals', description: 'Every job is handled by qualified experts with years of hands-on experience.' },
+      { icon: 'fa-clock', title: 'Reliable & On Time', description: 'We respect your time. Our team arrives promptly and completes work to schedule.' },
+      { icon: 'fa-thumbs-up', title: 'Satisfaction Guaranteed', description: 'If you\'re not happy, we\'ll make it right — no questions asked.' },
+      { icon: 'fa-headphones', title: '7-Day Support', description: 'Our customer support team is available 7 days a week to assist with any queries.' },
+      { icon: 'fa-money-bill', title: 'Transparent Pricing', description: 'No hidden fees or surprises. You receive a clear quote before any work begins.' },
+    ];
+
+    const steps = [
+      { icon: 'fa-clipboard-list', number: '01', title: 'Request a Quote', description: 'Fill in our simple form with details about your job and we will get back to you with a competitive, no-obligation quote.' },
+      { icon: 'fa-calendar-check', number: '02', title: 'Book Your Appointment', description: 'Choose a time that suits you. We offer flexible scheduling including evenings and weekends at no extra charge.' },
+      { icon: 'fa-helmet-safety', number: '03', title: 'We Get to Work', description: 'Our professional arrives on time, fully equipped. We treat your home with respect and work cleanly and efficiently.' },
+      { icon: 'fa-circle-check', number: '04', title: 'Job Done, Guaranteed', description: 'We complete the job to the highest standard and only leave once you are fully satisfied with the results.' },
+    ];
+
+    const testimonials = [
+      { name: 'Sarah Mitchell', location: 'London', service: 'Plumbing', avatar: 'SM', color: '#2563eb', text: 'Absolutely brilliant service. The plumber arrived within the hour and fixed our leaking pipe quickly and cleanly. Will definitely use UM Service again!' },
+      { name: 'James Thompson', location: 'Manchester', service: 'Carpentry', avatar: 'JT', color: '#16a34a', text: 'Had custom fitted wardrobes installed throughout the bedroom. The craftsmanship is outstanding and the team were incredibly professional and tidy.' },
+      { name: 'Emma Rodriguez', location: 'Birmingham', service: 'Decorating', avatar: 'ER', color: '#e11d48', text: 'Our entire ground floor has been transformed. The painters were meticulous, the colour advice was spot-on, and the finish is perfect. Highly recommend!' },
+      { name: 'David Park', location: 'Leeds', service: 'Roofing', avatar: 'DP', color: '#f59e0b', text: 'Very impressed with how quickly they responded to our roofing emergency. The team assessed and repaired the damage the same day. Exceptional service.' },
+      { name: 'Priya Sharma', location: 'Bristol', service: 'Flooring', avatar: 'PS', color: '#0d9488', text: 'The new hardwood floors look incredible. Very competitive pricing and the fitters were polite and respectful of our home throughout the whole process.' },
+      { name: 'Mark Stevens', location: 'Liverpool', service: 'Gardening', avatar: 'MS', color: '#15803d', text: 'Our garden has been completely revamped. From design to completion, the gardeners showed incredible skill and passion. Exactly what we envisioned.' },
+    ];
+
+    let showAllServices = false;
+
+    function renderServices() {
+      const grid = document.getElementById('servicesGrid');
+      const visible = showAllServices ? services : services.slice(0, 8);
+      grid.innerHTML = visible.map(s => `
+        <div class="service-card" onclick="scrollToSection('contact')">
+          <div class="service-icon ${`color-${s.color} color-${s.textColor}`}">
+            <i class="fas ${s.icon}"></i>
+          </div>
+          <h3 class="service-title">${s.title}</h3>
+          <p class="service-description">${s.description}</p>
+          <div class="service-cta">Book now <i class="fas fa-arrow-right"></i></div>
+        </div>
+      `).join('');
+    }
+
+    function renderReasons() {
+      const grid = document.getElementById('reasonsGrid');
+      grid.innerHTML = reasons.map(r => `
+        <div class="reason-item">
+          <div class="reason-icon">
+            <i class="fas ${r.icon}"></i>
+          </div>
+          <div class="reason-content">
+            <h3>${r.title}</h3>
+            <p>${r.description}</p>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderSteps() {
+      const grid = document.getElementById('stepsGrid');
+      grid.innerHTML = steps.map(s => `
+        <div class="step-item">
+          <div class="step-header">
+            <div class="step-icon">
+              <i class="fas ${s.icon}"></i>
+            </div>
+            <div class="step-number">${s.number}</div>
+          </div>
+          <h3 class="step-title">${s.title}</h3>
+          <p class="step-description">${s.description}</p>
+        </div>
+      `).join('');
+    }
+
+    function renderTestimonials() {
+      const grid = document.getElementById('testimonialsGrid');
+      grid.innerHTML = testimonials.map(t => `
+        <div class="testimonial-card">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <div class="testimonial-rating">
+            <i class="fas fa-star star"></i>
+            <i class="fas fa-star star"></i>
+            <i class="fas fa-star star"></i>
+            <i class="fas fa-star star"></i>
+            <i class="fas fa-star star"></i>
+          </div>
+          <p class="testimonial-text">${t.text}</p>
+          <div class="testimonial-footer">
+            <div class="testimonial-avatar" style="background: ${t.color};">${t.avatar}</div>
+            <div class="testimonial-info">
+              <h4>${t.name}</h4>
+              <p>${t.location} · ${t.service}</p>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderFooterServices() {
+      const footer = document.getElementById('footerServices');
+      footer.innerHTML = services.map(s => `
+        <button class="footer-link" onclick="scrollToSection('contact')">${s.title}</button>
+      `).join('');
+    }
+
+    function populateServiceSelect() {
+      const select = document.querySelector('select[name="service"]');
+      select.innerHTML = '<option value="">Select a service</option>' +
+        services.map(s => `<option value="${s.title}">${s.title}</option>`).join('');
+    }
+
+    function toggleServices() {
+      showAllServices = !showAllServices;
+      renderServices();
+      const btn = document.getElementById('seeMoreBtn');
+      if (showAllServices) {
+        btn.style.display = 'none';
+      } else {
+        btn.style.display = 'inline-flex';
+      }
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('open');
+    }
+
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('mobileMenu').classList.remove('open');
+      }
+    }
+
+    window.addEventListener('scroll', () => {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 40) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        service: formData.get('service'),
+        message: formData.get('message'),
+      };
+
+      const btn = e.target.querySelector('button[type="submit"]');
+      btn.disabled = true;
+
+      try {
+        const response = await fetch(`${SUPABASE_URL}/rest/v1/enquiries`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${SUPABASE_KEY}`,
+            'apikey': SUPABASE_KEY,
+          },
+          body: JSON.stringify(data),
+        });
+
+        if (!response.ok) throw new Error('Failed to submit');
+
+        document.getElementById('contactForm').style.display = 'none';
+        document.getElementById('successMessage').classList.add('show');
+      } catch {
+        document.getElementById('formError').textContent = 'Something went wrong. Please try again or call us directly.';
+        document.getElementById('formError').classList.add('show');
+      } finally {
+        btn.disabled = false;
+      }
+    });
+
+    function resetForm() {
+      document.getElementById('contactForm').style.display = 'grid';
+      document.getElementById('successMessage').classList.remove('show');
+      document.getElementById('contactForm').reset();
+      document.getElementById('formError').classList.remove('show');
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    renderServices();
+    renderReasons();
+    renderSteps();
+    renderTestimonials();
+    renderFooterServices();
+    populateServiceSelect();
+
+    document.querySelector('.form-row-cols').style.gridTemplateColumns = 'repeat(2, 1fr)';
+  </script>
+</body>
+</html>
